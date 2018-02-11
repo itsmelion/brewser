@@ -4,15 +4,6 @@
   </a>
   <br>
   <br>
-
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![deps][deps]][deps-url]
-[![tests][tests]][tests-url]
-[![builds][builds]][builds-url]
-[![coverage][cover]][cover-url]
-
-  <br>
   <h1>:beer: Brewser</h1>
   <p>
     A Beer catalog, that allows people to browse brews around the world.
