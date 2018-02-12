@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "main": "src/index.js",
   "scripts": {
-    "express": "PORT=8080 node server.js",
+    "express": "PORT=8080 nodemon server.js",
     "ng": "ng",
     "start": "ng serve | PORT=8080 nodemon server.js",
     "build": "ng build --prod",

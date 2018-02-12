@@ -1,27 +1,22 @@
 const express = require('express');
 const BreweryDb = require('brewerydb-node');
 
+const brewdb = new BreweryDb('08f7756465bc9ebecc995d7347fe895a');
 const router = express.Router();
-const brewdb = new BreweryDb(process.env.apiKey);
 
 router.get('/', (req, res) => {
-
-  const myCallback = function myCallback(err, data) {
-    if (err) throw err;
-    return data;
-  };
-
   res.format({
-    html: function () {
+    html() {
       res.send('Developed with love, at <a href="http://alia.ml">ΛLIΛ<a>');
     },
 
-    json: function () {
+    json() {
       // { Resolving CORS BreweryDB }
-      res.jsonp(brewdb.style.all(myCallback));
-    }
-  })
-
+      brewdb.style.all((err, data) => {
+        res.jsonp(data);
+      });
+    },
+  });
 });
 
 module.exports = router;
