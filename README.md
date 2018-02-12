@@ -33,7 +33,7 @@ ___
 Run `npm run test`
 ___
 ### Developer Notes
-Im using a CSS framework called **Flamework** that i(@itsmelion) maintain.
+Im using a CSS framework called **Flamework** that i( @itsmelion ) maintain.
 Im using the Beta version. for more information check on
 [NPM](https://www.npmjs.com/package/flamework) or [Github](https://www.github.com/alia-code/flamework)
 ___
