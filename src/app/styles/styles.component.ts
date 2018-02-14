@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
+import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-styles',
@@ -7,6 +8,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./styles.component.scss'],
 })
 
+@Input()
 export class StylesComponent {
   styles: any;
   loading: boolean;

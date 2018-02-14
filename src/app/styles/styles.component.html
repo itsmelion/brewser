@@ -1,8 +1,15 @@
-<ul column>
+<div>
+    <input type="search" [(ngModel)]="query" placeholder="Find your beer Style">
+</div>
+
+<ul class="main-list" row mobile=column flex=grow mobile-align="start center" align=center>
 
   <span *ngIf="loading" row align="center center" flex><img class="load" flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
-  <li *ngFor="let category of styles">
-    {{category.name}}
+  <li *ngFor="let category of styles | search:'name':query">
+    <a href="/Beer/{{category.id}}">
+      {{category.name}}
+    </a>
   </li>
+
 </ul>

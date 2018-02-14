@@ -16,8 +16,8 @@ ___
 #To-do
 
 - [x] Serve styles API
-- [ ] Search for styles
-- [ ] List per style
+- [x] Search for styles (category)
+- [x] List per style (category)
 - [ ] List beer
 - [ ] Search beer
 - [ ] Order Beer by IBU and ABV
