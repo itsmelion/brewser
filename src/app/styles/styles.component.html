@@ -1,9 +1,8 @@
-<p>
-  styles works!
-</p>
+<ul column>
 
-<ul>
-  <li *ngFor="let style of styles">
-    {{style.category.name}}
+  <span *ngIf="loading" row align="center center" flex><img class="load" flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
+
+  <li *ngFor="let category of styles">
+    {{category.name}}
   </li>
 </ul>

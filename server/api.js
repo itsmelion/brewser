@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
     json() {
       // { Resolving CORS BreweryDB }
-      brewdb.style.all((err, data) => {
+      brewdb.category.all((err, data) => {
         res.jsonp(data);
       });
     },
