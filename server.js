@@ -24,6 +24,7 @@ app.use(compression());
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'src/app/assets')));
 
 // Set our api routes
 app.use('/api', api);
