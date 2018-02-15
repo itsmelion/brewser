@@ -10,6 +10,7 @@ import { StylesComponent } from './styles/styles.component';
 import { ApiService } from './api.service';
 import { SearchPipe } from './search.pipe';
 import { BeersComponent } from './beers/beers.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BeersComponent } from './beers/beers.component';
     StylesComponent,
     SearchPipe,
     BeersComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

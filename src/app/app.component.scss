@@ -1,3 +1,5 @@
+$main-color: #edd27f;
+
 .logo {
   background: #fafafa;
   padding-top: 1rem;
@@ -8,4 +10,15 @@
     height: auto;
     display: block;
   }
+}
+
+#search-toggle{
+  border-radius: 50%;
+  color: white;
+  background-color: darken($main-color, 10%);
+  box-shadow: 0 2pt 10pt rgba(black, .2);
+  height: 30pt;
+  position: fixed;
+  bottom: .5rem;
+  right: .5rem;
 }

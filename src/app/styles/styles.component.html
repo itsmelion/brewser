@@ -7,7 +7,7 @@
   <span class="load" *ngIf="loading" row align="center center" flex><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
   <li *ngFor="let style of styles | search:'name':query">
-    <a [routerLink]="['/beers', style.categoryURI]" >
+    <a [routerLink]="['/beers', style.id]" >
       {{style.name}}
     </a>
   </li>

@@ -5,13 +5,20 @@
 
 <h2>{{title}}</h2>
 
-<ul class="main-list" row mobile=column flex=grow mobile-align="start center" align=center>
+<ul class="beers-list" row mobile=column flex mobile-align="start stretch" align=center>
 
   <span *ngIf="loading" row align="center center" flex><img class="load" flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
   <li *ngFor="let beer of beers | search:'name':query">
     <a>
-      {{beer.name}}
+      <div class="beer-item" row nowrap align="start center">
+        <img *ngIf=beer.labels [src]="beer.labels.icon" />
+        <img class="noImage" *ngIf=!beer.labels src="/assets/images/logo-stroke-black.svg" />
+        <div flex>
+          <h4>{{beer.name}}</h4>
+          <p></p>
+        </div>
+      </div>
     </a>
   </li>
 

@@ -27,27 +27,56 @@ router.get('/styles', (req, res) => {
   });
 });
 
-// Beer Style
+/*
+  Beer Style
+*/
+
+// BY URI
+
+// router.get('/styles/:URI', (req, res) => {
+//   const decodeParam = decodeURI(req.params.URI);
+//   res.format({
+//     html() {
+//       res.send(`<h1>API for Beer Category: ${decodeParam}</h1><br>
+//                 <p>Developed with love, at <a href="http://alia.ml">ΛLIΛ<a></p>`);
+//     },
+
+//     json() {
+//       brewdb.style.getById(req.params.URI, (err, data) => {
+//         res.jsonp(data);
+//       });
+//       // brewdb.search.all({ q: decodeParam, type: 'beer' }, (err, data) => {
+//       //   res.jsonp(data);
+//       // });
+//     },
+//   });
+// });
+
+// By ID
 router.get('/styles/:styleID', (req, res) => {
-  const decodeParam = decodeURI(req.params.styleID);
   res.format({
     html() {
-      res.send(`<h1>API for Beer Category: ${decodeParam}</h1><br>
+      res.send(`<h1>API for Beers Styles by ID</h1><br>
                 <p>Developed with love, at <a href="http://alia.ml">ΛLIΛ<a></p>`);
     },
 
     json() {
-      brewdb.style.getById(req.params.styleID, (err, data) => {
+      brewdb.beer.find({ styleId: req.params.styleID }, (err, data) => {
         res.jsonp(data);
       });
-      // brewdb.search.all({ q: decodeParam, type: 'beer' }, (err, data) => {
+
+      // or
+
+      // brewdb.search.all({ q: '%20', type: 'beer' }, (err, data) => {
       //   res.jsonp(data);
       // });
     },
   });
 });
 
-// Beers
+/*
+  Beers
+*/
 router.get('/beers', (req, res) => {
   res.format({
     html() {
@@ -56,36 +85,27 @@ router.get('/beers', (req, res) => {
     },
 
     json() {
-      brewdb.search.beers({ q: '%20' }, (err, data) => {
-        res.jsonp(data);
-      });
+
+      // Cannot get full list of beers, and cant skip passing a params
+      // brewdb.beer.find({ ?? }, (err, data) => {
+      //   res.jsonp(data);
+      // });
 
       // or
 
-      // brewdb.search.all({ q: '%20', type: 'beer' }, (err, data) => {
-      //   res.jsonp(data);
-      // });
+      brewdb.search.all({ q: '%20' }, (err, data) => {
+        res.jsonp(data);
+      });
     },
   });
 });
 
-router.get('/beers/:param', (req, res) => {
+router.post('/beers', (req, res) => {
   res.format({
-    html() {
-      res.send(`<h1>API for Beers</h1><br>
-                <p>Developed with love, at <a href="http://alia.ml">ΛLIΛ<a></p>`);
-    },
-
     json() {
-      brewdb.search.beers({ q: req.params.param }, (err, data) => {
+      brewdb.beer.find(req.body, (err, data) => {
         res.jsonp(data);
       });
-
-      // or
-
-      // brewdb.search.all({ q: '%20', type: 'beer' }, (err, data) => {
-      //   res.jsonp(data);
-      // });
     },
   });
 });

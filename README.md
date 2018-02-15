@@ -18,7 +18,7 @@ ___
 - [x] Serve styles API
 - [x] Search for styles
 - [x] List per style
-- [ ] List beer
+- [x] List beer
 - [ ] Search beer
 - [ ] Order Beer by IBU and ABV
 - [ ] Filter by name and style

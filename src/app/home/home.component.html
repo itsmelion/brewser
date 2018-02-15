@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
+  <div class="form-group">
+    <input type="text" #emailField="ngModel" placeholder="Find a Beer"
+      [(ngModel)]="beer" name="beer" required>
+  </div>
+  <button type="submit" class="button">Search</button>
+</form>
+
+<ul>
+  <li [routerLink]="['/styles']">List Styles</li>
+
+</ul>

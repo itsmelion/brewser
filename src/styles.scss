@@ -35,7 +35,7 @@ h2{
   }
 }
 
-.main-list{
+.main-list {
   width: 100%;
   overflow-y: auto;
   li{
@@ -45,6 +45,37 @@ h2{
     font-weight: 600;
     margin: .5rem;
     border-radius: 5pt;
+  }
+}
+
+.beers-list {
+  width: 100%;
+  overflow-y: auto;
+  li{
+    background-color: lighten($main-color, 7%);
+    color: white;
+    font-weight: 600;
+    margin: .5rem;
+    border-radius: 5pt;
+    text-align: left;
+    .beer-item{
+      position: relative;
+      padding-left: 64pt;
+      height: 64pt;
+      .noImage{
+        opacity: .1;
+      }
+      div{
+        padding: .5rem;
+      }
+    }
+    img{
+      left: 0;
+      border-radius: 5pt 0 0 5pt;
+      width: 64pt;
+      height: auto;
+      position: absolute;
+    }
   }
 }
 

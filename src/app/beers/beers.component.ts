@@ -17,14 +17,31 @@ export class BeersComponent {
   title: string;
 
   constructor(private api: ApiService, private route: ActivatedRoute) {
-    const styleID = route.snapshot.params.styleID;
     this.loading = true;
-    this.api.getAPI(`http://localhost:8080/api/beers/${styleID}`)
-    .subscribe((res) => {
-      this.beers = res.json();
-      this.title = this.beers[0].style.name + 's' || 'Style';
-      this.loading = false;
-    });
+    this.title = 'No Title';
+    this.beers = this.checkParams(route.snapshot.params);
+  }
+
+  checkParams(params) {
+    let request: string;
+    if (Object.keys(params).length !== 0 && params.constructor === Object) {
+      request = `http://localhost:8080/api/styles/${params.styleID}`;
+      this.api.getAPI(request)
+      .subscribe((res) => {
+        this.beers = res.json();
+        this.title = this.beers[0].style.name + 's' || 'Style';
+        this.loading = false;
+      });
+    } else {
+      request = `http://localhost:8080/api/beers`;
+      this.api.getAPI(request)
+      .subscribe((res) => {
+        this.beers = res.json();
+        this.title = 'Beers for all!';
+        this.loading = false;
+      });
+    }
+
   }
 
 }
