@@ -16,12 +16,23 @@ a {
   height: 100%;
 }
 
+h2{
+  text-align: center;
+  color: lighten($main-color, 15%);
+  font-weight: 100;
+  font-size: 1.8rem;
+  padding: 5%;
+}
+
 .load{
-  width: 64pt;
-  height: 64pt;
-  position: relative;
+  position: absolute;
   top: 50%;
-  margin-top: -32pt;
+  width: 100%;
+  img{
+    margin: auto;
+    width: 64pt;
+    height: 64pt;
+  }
 }
 
 .main-list{

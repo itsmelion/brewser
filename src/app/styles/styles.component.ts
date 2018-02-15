@@ -15,7 +15,7 @@ export class StylesComponent {
 
   constructor(private api: ApiService) {
     this.loading = true;
-    this.api.getStyles('http://localhost:8080/api')
+    this.api.getAPI('http://localhost:8080/api/styles')
       .subscribe((res) => {
         this.styles = res.json();
         this.loading = false;

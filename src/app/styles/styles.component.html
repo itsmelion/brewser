@@ -1,14 +1,14 @@
 <div>
-    <input type="search" [(ngModel)]="query" placeholder="Find your beer Style">
+    <input type="search" [(ngModel)]="query" placeholder="Find your beer with Style">
 </div>
 
 <ul class="main-list" row mobile=column flex=grow mobile-align="start center" align=center>
 
-  <span *ngIf="loading" row align="center center" flex><img class="load" flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
+  <span class="load" *ngIf="loading" row align="center center" flex><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
-  <li *ngFor="let category of styles | search:'name':query">
-    <a [routerLink]="['/beers', category.categoryURI]" >
-      {{category.name}}
+  <li *ngFor="let style of styles | search:'name':query">
+    <a [routerLink]="['/beers', style.categoryURI]" >
+      {{style.name}}
     </a>
   </li>
 

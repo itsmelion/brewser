@@ -2,12 +2,15 @@
     <input type="search" [(ngModel)]="query" placeholder="Find your beer">
 </div>
 
+
+<h2>{{title}}</h2>
+
 <ul class="main-list" row mobile=column flex=grow mobile-align="start center" align=center>
 
   <span *ngIf="loading" row align="center center" flex><img class="load" flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
   <li *ngFor="let beer of beers | search:'name':query">
-    <a href="/beer/{{beer.beerURI}}">
+    <a>
       {{beer.name}}
     </a>
   </li>

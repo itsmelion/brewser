@@ -7,7 +7,7 @@ export class ApiService {
   constructor(private http: Http) {
   }
 
-  getStyles(URI) {
+  getAPI(URI) {
     return this.http.get(URI);
   }
 

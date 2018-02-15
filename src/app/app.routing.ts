@@ -9,7 +9,7 @@ export const routing = RouterModule.forRoot([
     component: StylesComponent,
   },
   {
-    path: 'beers/:category',
+    path: 'beers/:styleID',
     component: BeersComponent,
   },
 ]);
