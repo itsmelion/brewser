@@ -19,7 +19,14 @@ export class StylesComponent {
       .subscribe((res) => {
         this.styles = res.json();
         this.loading = false;
+        this.codeURI(this.styles);
       });
+  }
+
+  codeURI(string) {
+    for (let i = 0; i < string.length; i++) {
+      this.styles[i].categoryURI = encodeURI(string[i].name);
+    }
   }
 
 
