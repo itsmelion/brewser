@@ -7,7 +7,7 @@
   <h1>:beer: Brewser</h1>
   <p>
     A Beer catalog, that allows people to browse brews around the world.
-    Sit back, and have a beer!
+    Sit back, and have a beer! 🍻
   <p>
 </div>
 

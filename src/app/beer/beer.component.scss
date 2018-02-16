@@ -1,0 +1,33 @@
+$main-color: #edd27f;
+.beer-item{
+  background-color: lighten($main-color, 10%);
+  box-shadow: 0 2pt 15pt #927f46;
+  margin: .5rem;
+  margin-top: 1rem;
+}
+.thumbnails{
+  min-width: 200pt;
+  min-height: 200pt;
+  background-color: #d9c27d;
+  img.noImage{opacity: .2}
+}
+.organic{
+  background-color: #18cb92;
+  color: white;
+  border-radius: 3pt;
+  padding: .25rem;
+  font-weight: bold;
+}
+
+.verified{
+  background-color: #e1b65f;
+  color: white;
+  border-radius: 2pt;
+  padding: .2rem;
+  font-size: .7rem;
+}
+
+legend{
+  padding: 1rem;
+  p{margin: .5rem 0}
+}

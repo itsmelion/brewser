@@ -1,20 +1,42 @@
 import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { routing } from './app.routing';
+import { APP_BASE_HREF } from '@angular/common';
 
-import { ApiService } from './api.service';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
 import { StylesComponent } from './styles/styles.component';
+import { ApiService } from './api.service';
+import { SearchPipe } from './search.pipe';
+import { BeersComponent } from './beers/beers.component';
+import { HomeComponent } from './home/home.component';
+import { BeerComponent } from './beer/beer.component';
+import { OrganicPipe } from './organic.pipe';
+import { OrderModule } from 'ngx-order-pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, StylesComponent,
+        AppComponent,
+        StylesComponent,
+        BeersComponent,
+        HomeComponent,
+        BeerComponent,
+        SearchPipe,
+        OrganicPipe,
       ],
       imports: [
-        HttpModule,
+        BrowserModule,
+        routing,
+        HttpClientModule,
+        FormsModule,
+        OrderModule,
       ],
-      providers: [ApiService],
+      providers: [ApiService, { provide: APP_BASE_HREF, useValue : '/' }],
     }).compileComponents();
   }));
 
@@ -22,19 +44,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
-
-  it(`should List beer styles`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Brewser');
-  }));
-
-  it('should have links to the style category', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Brewser!');
   }));
 
 });

@@ -1,19 +1,31 @@
-<main container>
+<main container >
 
+  <span class="load" *ngIf=!beer row align="center center" flex><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
-  <h2>{{beer.name}}</h2>
+  <article class="beer-item"
+    row mobile=column nowrap
+    align="start stretch" mobile-align="start stretch"
+    *ngIf=beer>
 
-
-  <div class="beer-item" row nowrap align="start center">
-
-    <img *ngIf=beer.labels [src]="beer.labels.medium" />
-    <img class="noImage" *ngIf=!beer.labels src="/assets/images/logo-stroke-black.svg" />
-
-    <div flex>
-      <h4>{{beer.name}}</h4>
-      <p>{{beer.description}}</p>
+    <div flex class="thumbnails">
+      <img flex=none *ngIf=beer.labels [src]="beer.labels.medium" />
+      <img flex=none class="noImage" *ngIf=!beer.labels src="/assets/images/logo-stroke-black.svg" />
     </div>
 
-  </div>
+    <legend flex column align="between start">
+        <div flex>
+          <h3>{{beer.name}} <span *ngIf="beer.verified === 'verified'" class="verified">verified</span></h3>
+          <h4>Style: {{beer.style.name}}</h4>
+          <p>{{beer.description || "No description"}}</p>
+        </div>
+
+        <div column align="start start">
+          <h5 class="organic" *ngIf="beer.isOrganic === 'Y'">Organic</h5>
+          <p>ABV: {{beer.abv || "No ABV"}}</p>
+          <p>IBU: {{beer.ibu || "No IBU"}}</p>
+        </div>
+    </legend>
+
+  </article>
 
 </main>
