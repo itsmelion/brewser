@@ -109,4 +109,18 @@ router.post('/beers', (req, res) => {
   });
 });
 
+router.get('/beer/:ID', (req, res) => {
+  res.format({
+    html() {
+      res.send(`<h1>API for Beer</h1><br>
+                <p>Developed with love, at <a href="http://alia.ml">ΛLIΛ<a></p>`);
+    },
+    json() {
+      brewdb.beer.getById(req.params.ID, {}, (err, data) => {
+        res.jsonp(data);
+      });
+    },
+  });
+});
+
 module.exports = router;

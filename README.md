@@ -21,12 +21,12 @@ ___
 - [x] List beer
 - [x] Search beer
 - [ ] Order Beer by IBU and ABV and allow to filter for organic beers
-- [ ] Show beer when selected
+- [x] Show beer when selected
 
 ___
 ## Running the Project
 Run `npm install`
-to serve and build `npm start` or `npm run hot` for Hot Module Replacement;
+to build and serve run `npm start`;
 ___
 ## Testing
 Run `npm run test`

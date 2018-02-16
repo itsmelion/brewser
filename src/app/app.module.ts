@@ -12,6 +12,7 @@ import { ApiService } from './api.service';
 import { SearchPipe } from './search.pipe';
 import { BeersComponent } from './beers/beers.component';
 import { HomeComponent } from './home/home.component';
+import { BeerComponent } from './beer/beer.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
     SearchPipe,
     BeersComponent,
     HomeComponent,
+    BeerComponent,
   ],
   imports: [
     BrowserModule,

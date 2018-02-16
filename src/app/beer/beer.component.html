@@ -1,0 +1,19 @@
+<main container>
+
+
+  <h2>{{beer.name}}</h2>
+
+
+  <div class="beer-item" row nowrap align="start center">
+
+    <img *ngIf=beer.labels [src]="beer.labels.medium" />
+    <img class="noImage" *ngIf=!beer.labels src="/assets/images/logo-stroke-black.svg" />
+
+    <div flex>
+      <h4>{{beer.name}}</h4>
+      <p>{{beer.description}}</p>
+    </div>
+
+  </div>
+
+</main>
