@@ -85,7 +85,6 @@ router.get('/beers', (req, res) => {
     },
 
     json() {
-
       // Cannot get full list of beers, and cant skip passing a params
       // brewdb.beer.find({ ?? }, (err, data) => {
       //   res.jsonp(data);

@@ -17,6 +17,10 @@ export const routing = RouterModule.forRoot([
     component: BeersComponent,
   },
   {
+    path: 'beer/:ID',
+    component: BeersComponent,
+  },
+  {
     path: 'beers',
     component: BeersComponent,
   },

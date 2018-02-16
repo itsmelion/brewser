@@ -25,18 +25,18 @@ export class BeersComponent {
   checkParams(params) {
     let request: string;
     if (Object.keys(params).length !== 0 && params.constructor === Object) {
-      request = `http://localhost:8080/api/styles/${params.styleID}`;
+      request = `styles/${params.styleID}`;
       this.api.getAPI(request)
       .subscribe((res) => {
-        this.beers = res.json();
+        this.beers = res;
         this.title = this.beers[0].style.name + 's' || 'Style';
         this.loading = false;
       });
     } else {
-      request = `http://localhost:8080/api/beers`;
+      request = `beers`;
       this.api.getAPI(request)
       .subscribe((res) => {
-        this.beers = res.json();
+        this.beers = res;
         this.title = 'Beers for all!';
         this.loading = false;
       });

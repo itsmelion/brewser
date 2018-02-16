@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 
 import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StylesComponent } from './styles/styles.component';
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     routing,
     HttpModule,
+    HttpClientModule,
     FormsModule,
   ],
   providers: [ApiService],

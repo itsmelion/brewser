@@ -2,7 +2,11 @@
 @import "~flamework";
 
 $main-color: #edd27f;
-
+[container]{
+  margin: auto;
+  position: relative;
+  max-width: 980px;
+}
 body{
   background-color: $main-color;
 }
@@ -85,9 +89,9 @@ input{
   font-size: 1.2rem;
   line-height: 1.4;
   border-radius: 5pt;
+  margin: 1rem;
+  background-color: white;
 }
 [type=search]{
-  background-color: white;
-  margin: 1rem;
   box-shadow: 0 2pt 10pt $black1;
 }
