@@ -1,7 +1,7 @@
-import { TestBed, async, fakeAsync, tick, ComponentFixture } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule, By } from '@angular/platform-browser';
+import { async, ComponentFixture,  inject, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { routing } from '../app.routing';
 import { APP_BASE_HREF } from '@angular/common';
 

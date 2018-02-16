@@ -15,7 +15,7 @@ export class BeerComponent {
 
   constructor(private api: ApiService, private route: ActivatedRoute) {
 
-    this.id = route.snapshot.params.ID;
+    this.id = route.snapshot.params.ID || 'HXKxpc';
     this.api.getAPI(`beer/${this.id}`)
     .subscribe((res) => {
       this.beer = res;

@@ -1,3 +1,4 @@
+import { TestBed, inject } from '@angular/core/testing';
 import { SearchPipe } from './search.pipe';
 
 describe('SearchPipe', () => {
