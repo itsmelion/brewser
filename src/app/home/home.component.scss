@@ -28,23 +28,3 @@ form{
     border-radius: 0 5pt 5pt 0;
   }
 }
-
-main{
-  padding-bottom: 6rem;
-}
-
-nav{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #c3af74;
-  li{
-    text-align: center;
-    color: white;
-    border: 1px solid transparent;
-    padding: 1rem 1.5rem;
-    &:nth-of-type(even){
-      border-left-color: #b09b5d;
-    }
-  }
-}

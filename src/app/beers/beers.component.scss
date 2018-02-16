@@ -1,0 +1,22 @@
+#filters {
+  button{
+    border: 2pt solid rgba(white, .3);
+    background-color: rgba(white, .2);
+    border-radius: 6pt;
+    padding: .4rem 1rem;
+    color: white;
+    transition: .1s ease-in;
+    &.active[organic]{
+      background-color: #18cb92;
+      border-color: lighten(#18cb92,15%);
+    }
+    &.active[ibu]{
+      background-color: #357cae;
+      border-color: lighten(#357cae,15%);
+    }
+    &.active[abv]{
+      background-color: #a658d7;
+      border-color: lighten(#a658d7,15%);
+    }
+  }
+}

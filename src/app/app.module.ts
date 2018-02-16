@@ -13,6 +13,8 @@ import { SearchPipe } from './search.pipe';
 import { BeersComponent } from './beers/beers.component';
 import { HomeComponent } from './home/home.component';
 import { BeerComponent } from './beer/beer.component';
+import { OrganicPipe } from './organic.pipe';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { BeerComponent } from './beer/beer.component';
     BeersComponent,
     HomeComponent,
     BeerComponent,
+    OrganicPipe,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { BeerComponent } from './beer/beer.component';
     HttpModule,
     HttpClientModule,
     FormsModule,
+    OrderModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

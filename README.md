@@ -20,7 +20,7 @@ ___
 - [x] List per style
 - [x] List beer
 - [x] Search beer
-- [ ] Order Beer by IBU and ABV and allow to filter for organic beers
+- [x] Order Beer by IBU and ABV and allow to filter for organic beers
 - [x] Show beer when selected
 
 ___
@@ -35,4 +35,6 @@ ___
 Im using a CSS framework called **Flamework** that i( @itsmelion ) maintain.
 Im using the Beta version. for more information check on
 [NPM](https://www.npmjs.com/package/flamework) or [Github](https://www.github.com/alia-code/flamework)
+
+Design Notes: - Looks better on Mobile. #GoMobileFIRST
 ___

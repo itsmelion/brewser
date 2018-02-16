@@ -11,7 +11,7 @@ const router = express.Router();
 */
 
 
-// Beer Styles (category)
+// Beer Styles
 router.get('/styles', (req, res) => {
   res.format({
     html() {
@@ -31,27 +31,6 @@ router.get('/styles', (req, res) => {
   Beer Style
 */
 
-// BY URI
-
-// router.get('/styles/:URI', (req, res) => {
-//   const decodeParam = decodeURI(req.params.URI);
-//   res.format({
-//     html() {
-//       res.send(`<h1>API for Beer Category: ${decodeParam}</h1><br>
-//                 <p>Developed with love, at <a href="http://alia.ml">ΛLIΛ<a></p>`);
-//     },
-
-//     json() {
-//       brewdb.style.getById(req.params.URI, (err, data) => {
-//         res.jsonp(data);
-//       });
-//       // brewdb.search.all({ q: decodeParam, type: 'beer' }, (err, data) => {
-//       //   res.jsonp(data);
-//       // });
-//     },
-//   });
-// });
-
 // By ID
 router.get('/styles/:styleID', (req, res) => {
   res.format({
@@ -64,12 +43,6 @@ router.get('/styles/:styleID', (req, res) => {
       brewdb.beer.find({ styleId: req.params.styleID }, (err, data) => {
         res.jsonp(data);
       });
-
-      // or
-
-      // brewdb.search.all({ q: '%20', type: 'beer' }, (err, data) => {
-      //   res.jsonp(data);
-      // });
     },
   });
 });
@@ -85,14 +58,9 @@ router.get('/beers', (req, res) => {
     },
 
     json() {
-      // Cannot get full list of beers, and cant skip passing a params
-      // brewdb.beer.find({ ?? }, (err, data) => {
-      //   res.jsonp(data);
-      // });
-
-      // or
-
-      brewdb.search.all({ q: '%20' }, (err, data) => {
+      // Cannot get full list of beers, so passing any param
+      // that returns at least ONE ORGANIC BEER
+      brewdb.search.beers({ q: 'Y' }, (err, data) => {
         res.jsonp(data);
       });
     },

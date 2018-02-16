@@ -6,7 +6,7 @@
   "scripts": {
     "express": "PORT=8080 nodemon server.js",
     "ng": "ng",
-    "start": "ng serve | PORT=8080 nodemon server.js",
+    "start": "PORT=8080 nodemon server.js | ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -32,6 +32,7 @@
     "flamework": "^2.0.0-beta.1",
     "jquery": "^3.3.1",
     "moment": "^2.20.1",
+    "ngx-order-pipe": "^1.2.1",
     "pace": "0.0.4",
     "pace-js": "^1.0.2",
     "popper.js": "^1.13.0",
@@ -40,7 +41,7 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "next",
+    "@angular/cli": "^6.0.0-beta.2",
     "@angular/compiler-cli": "next",
     "@angular/language-service": "next",
     "@types/jasmine": "^2.8.6",
@@ -63,7 +64,7 @@
     "nodemon": "^1.15.0",
     "protractor": "^5.3.0",
     "ts-node": "^4.1.0",
-    "tslint": "latest",
+    "tslint": "^5.9.1",
     "typescript": "^2.7.2"
   },
   "keywords": [

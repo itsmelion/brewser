@@ -3,14 +3,26 @@
     <input type="search" [(ngModel)]="query" placeholder="Find your beer">
   </div>
 
+  <nav id=filters row nowrap align=around>
+    <button organic [ngClass]="{active: toggleOrganic}" (click)="toggleOrganic = !toggleOrganic" >
+      <span *ngIf=!toggleOrganic>Filter Organic</span>
+      <span *ngIf=toggleOrganic>Disable Organic</span>
+    </button>
+    <button ibu [ngClass]="{active: order === 'ibu'}" (click)="setOrder('ibu');toggleIBU = !toggleIBU">
+      Order IBU <span *ngIf="order === 'ibu' && reverse"> ▲</span><span *ngIf="order === 'ibu' && !reverse">▼</span>
+    </button>
+    <button abv [ngClass]="{active: order === 'abv'}" (click)="setOrder('abv');toggleABV = !toggleABV">
+      Order ABV <span *ngIf="order === 'abv' && reverse"> ▲</span><span *ngIf="order === 'abv' && !reverse">▼</span>
+    </button>
+  </nav>
 
   <h2>{{title}}</h2>
 
-  <ul class="beers-list" row mobile=column flex mobile-align="start stretch" align=center>
+  <ul class="beers-list" column flex align="start stretch">
 
     <span class="load" *ngIf="loading" row align="center center" flex><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
-    <li *ngFor="let beer of beers | search:'name':query">
+    <li *ngFor="let beer of beers | search:'name':query | organic:'isOrganic':(toggleOrganic ? 'Y':'N') | orderBy: order:reverse:'case-insensitive' ">
       <a [routerLink]="['/beer', beer.id]">
         <div class="beer-item" row nowrap align="start center">
           <img *ngIf=beer.labels [src]="beer.labels.icon" />

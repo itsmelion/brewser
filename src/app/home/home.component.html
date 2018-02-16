@@ -9,7 +9,7 @@
   <h1 *ngIf="!response">Nothing to Display.</h1>
 
 
-  <ul class="beers-list" row mobile=column flex mobile-align="start stretch" align=center>
+  <ul class="beers-list" column flex align="start stretch">
 
       <span class="load" *ngIf="loading" row align="center center"><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
 
@@ -29,8 +29,3 @@
     </ul>
 
 </main>
-
-<nav row flex nowrap align="around">
-  <li flex [routerLink]="['/styles']">Styles</li>
-  <li flex [routerLink]="['/beers']">Beers</li>
-</nav>
