@@ -1,12 +1,36 @@
-<form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm">
-  <div class="form-group">
-    <input type="text" #emailField="ngModel" placeholder="Find a Beer"
-      [(ngModel)]="beer" name="beer" required>
-  </div>
-  <button type="submit" class="button">Search</button>
-</form>
+<main container column align="center">
 
-<ul>
-  <li [routerLink]="['/styles']">List Styles</li>
+  <form (ngSubmit)="onSubmit(form)" novalidate #form="ngForm" row nowrap align="between center">
+      <input type="search" placeholder="Find a Beer"
+        [(ngModel)]="beer" name="beer" required>
+      <button type="submit">Search</button>
+  </form>
 
-</ul>
+  <h1 *ngIf="!response">Nothing to Display.</h1>
+
+
+  <ul class="beers-list" row mobile=column flex mobile-align="start stretch" align=center>
+
+      <span class="load" *ngIf="loading" row align="center center"><img flex="none" src="/assets/images/loading.gif" alt="Loading Content" /></span>
+
+      <li *ngFor="let beer of response">
+        <a>
+          <div class="beer-item" row nowrap align="start center">
+            <img *ngIf=beer.labels [src]="beer.labels.icon" />
+            <img class="noImage" *ngIf=!beer.labels src="/assets/images/logo-stroke-black.svg" />
+            <div flex>
+              <h4>{{beer.name}}</h4>
+              <p></p>
+            </div>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+
+</main>
+
+<nav row flex nowrap align="around">
+  <li flex [routerLink]="['/styles']">Styles</li>
+  <li flex [routerLink]="['/beers']">Beers</li>
+</nav>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,31 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent {
   beer: string;
+  response: any;
+  loading: boolean;
+  httpOptions: Object;
 
-  onSubmit(form: NgForm) {
-    console.log(this.beer);
-    console.log('should search:', this.beer);
-    form.resetForm();
+  constructor(private http: HttpClient) {
+    this.response = [{name: 'Go ahead and Search! Dont let the beers waiting'}];
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+  }
+
+  onSubmit() {
+    this.loading = true;
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:8080/api/beers', { name: this.beer }, this.httpOptions)
+    .subscribe((res: any) => {
+      if (res !== null) {
+        this.response = res;
+      } else {
+        this.response = [{name: 'NOTHING FOUND, Maybe our server drank ya beer.'}];
+      }
+      this.loading = false;
+    });
   }
 }

@@ -19,9 +19,8 @@ ___
 - [x] Search for styles
 - [x] List per style
 - [x] List beer
-- [ ] Search beer
-- [ ] Order Beer by IBU and ABV
-- [ ] Filter by name and style
+- [x] Search beer
+- [ ] Order Beer by IBU and ABV and allow to filter for organic beers
 - [ ] Show beer when selected
 
 ___
