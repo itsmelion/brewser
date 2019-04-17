@@ -20,9 +20,7 @@ router.get('/styles', (req, res) => {
     },
 
     json() {
-      brewdb.style.all((err, data) => {
-        res.jsonp(data);
-      });
+      brewdb.style.all((err, data) => res.jsonp(data));
     },
   });
 });
